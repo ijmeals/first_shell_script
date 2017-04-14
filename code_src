@@ -1,0 +1,28 @@
+#!/bin/bash
+project_path="/Users/Isaac/projects"
+folder="$(find $project_path -maxdepth 1 -type d -iname *${1}*)"
+num=$(find $project_path -maxdepth 1 -type d -iname *${1}* | wc -l)
+
+if [ -n "$folder" ] ; then
+
+  if [ $num == "1" ] ; then
+    subl $folder
+  else
+    
+    echo "more than one match was found..."
+
+    for fname in $folder
+    do
+      echo "do you want to open this one (y or n): ${fname}"
+      read ANSWER
+
+      if [ $ANSWER == "y" ] ; then
+        subl $fname
+        break
+      fi
+    done
+  fi
+
+else
+  echo "No project found"
+fi
