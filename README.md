@@ -1,6 +1,6 @@
 # Problem
 
-When I open a new terminal I am not located where my project source code is. On top of that, sometimes I navigate away from that directory for one reason or another and then in order to open another project I have to go back to my _project_ directory before typing in `subl .`.
+When I open a new terminal I am not located where my project source code is. On top of that, sometimes I navigate away from that directory for one reason or another and then in order to open another project I have to go back to my _project_ directory before typing in `atom .`.
 
 # Solution
 
