@@ -1,12 +1,14 @@
 #!/bin/bash
-project_path="/Users/Isaac/projects"
+cd ~
+project_path="projects"
 folder="$(find $project_path -maxdepth 1 -type d -iname *${1}*)"
 num=$(find $project_path -maxdepth 1 -type d -iname *${1}* | wc -l)
 
 if [ -n "$folder" ] ; then
 
   if [ $num == "1" ] ; then
-    subl $folder
+    atom $folder
+    echo "~${pwd}/${fname}"
   else
     
     echo "more than one match was found..."
@@ -17,7 +19,8 @@ if [ -n "$folder" ] ; then
       read ANSWER
 
       if [ $ANSWER == "y" ] ; then
-        subl $fname
+        atom $fname
+        echo "~${pwd}/${fname}"
         break
       fi
     done
